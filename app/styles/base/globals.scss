@@ -1,0 +1,127 @@
+@use "resolutions" as *;
+@use "typography" as *;
+
+:root {
+  //Colors
+  --c-background-color: #ffffff;
+  --c-text-main: #000000;
+  --c-text-main-transparent: rgba(0, 0, 0, 0.5);
+  --c-text-main-transparent-alt: rgba(0, 0, 0, 0.7);
+  --c-text-secondary: #7b8191;
+  --c-text-secondary-transparent: rgba(123, 129, 145, 0.5); //50%
+  --c-accent: #6851ff;
+  --c-malibu: #8b8aff;
+  --c-logo-text: #0e0854;
+
+  //Testimonials
+  --c-testimonial-background: #d6d8e5;
+  --c-testimonial-background-active: #ded1fa;
+
+  //Gradient
+  --c-gradient-start: #ffffff;
+  --c-gradient-end: #f4effe;
+  --gradient: linear-gradient(var(--c-gradient-start), var(--c-gradient-end));
+
+  //Buttons
+  --c-stroke: #d6d8e5;
+  --c-button-primary-text: #ffffff;
+  --c-button-primary-default: var(--c-accent);
+  --c-button-primary-hover: var(--c-malibu);
+  --c-button-primary-focus: var(--c-accent);
+  --c-button-primary-focus-stroke: #3118d6;
+  --c-button-primary-focus-pressed: #3d1efe;
+  --c-button-primary-disabled: #b5b8cb;
+
+  --c-button-secondary-default-stroke: var(--c-stroke);
+  --c-button-secondary-hover-stroke: var(--c-accent);
+  --c-button-secondary-focus-text: var(--c-accent);
+  --c-button-secondary-focus-stroke: var(--c-accent);
+  --c-button-secondary-pressed-text: #2511ae;
+  --c-button-secondary-pressed-stroke: #2511ae;
+  --c-button-secondary-disabled-text: #717788;
+  --c-button-secondary-disabled-stroke: var(--c-stroke);
+
+  //Tabs
+  --c-tabs-background: #edeaff;
+  --c-tabs-stroke: var(--c-stroke);
+
+  --c-tab-default-active-background: var(--c-background-color);
+  --c-tab-default-active-stroke: #eaecf4;
+  --c-tab-default-active-text: var(--c-accent);
+
+  --c-tab-hover-active-background: #edeaff;
+  --c-tab-hover-active-stroke: var(--c-stroke);
+  --c-tab-hover-active-text: var(--c-accent);
+
+  --c-tab-pressed-active-background: #edeaff;
+  --c-tab-pressed-active-stroke: var(--c-malibu);
+  --c-tab-pressed-active-text: var(--c-accent);
+
+  --c-tab-focus-active-background: rgba(60, 30, 254, 0.2);
+  --c-tab-focus-active-stroke: var(--c-accent);
+  --c-tab-focus-active-text: var(--c-accent);
+
+  --c-tab-default-inactive-text: var(--c-text-secondary);
+  --c-tab-inactive-text: var(--c-accent);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%; //10px/16px = 62.5%, 1rem = 10px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: -0.05em;
+}
+
+.wrapper {
+  width: min(1312px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 1rem;
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
