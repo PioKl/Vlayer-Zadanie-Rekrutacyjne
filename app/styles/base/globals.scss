@@ -12,6 +12,10 @@
   --c-accent: #6851ff;
   --c-malibu: #8b8aff;
   --c-logo-text: #0e0854;
+  --c-stroke: #f5f7fb;
+  --c-stroke-footer: #e8e6f9;
+  --c-stroke-hero: #d6d8e5;
+  --c-blur-background: rgba(255, 255, 255, 0.9);
 
   //Testimonials
   --c-testimonial-background: #d6d8e5;
@@ -23,23 +27,23 @@
   --gradient: linear-gradient(var(--c-gradient-start), var(--c-gradient-end));
 
   //Buttons
-  --c-stroke: #d6d8e5;
+  --c-stroke-button: #d6d8e5;
   --c-button-primary-text: #ffffff;
-  --c-button-primary-default: var(--c-accent);
-  --c-button-primary-hover: var(--c-malibu);
-  --c-button-primary-focus: var(--c-accent);
+  --c-button-primary-default-background: var(--c-accent);
+  --c-button-primary-hover-background: var(--c-malibu);
+  --c-button-primary-focus-background: var(--c-accent);
   --c-button-primary-focus-stroke: #3118d6;
-  --c-button-primary-focus-pressed: #3d1efe;
-  --c-button-primary-disabled: #b5b8cb;
+  --c-button-primary-pressed-background: #3d1efe;
+  --c-button-primary-disabled-backround: #b5b8cb;
 
-  --c-button-secondary-default-stroke: var(--c-stroke);
+  --c-button-secondary-default-stroke: var(--c-stroke-button);
   --c-button-secondary-hover-stroke: var(--c-accent);
   --c-button-secondary-focus-text: var(--c-accent);
   --c-button-secondary-focus-stroke: var(--c-accent);
   --c-button-secondary-pressed-text: #2511ae;
   --c-button-secondary-pressed-stroke: #2511ae;
   --c-button-secondary-disabled-text: #717788;
-  --c-button-secondary-disabled-stroke: var(--c-stroke);
+  --c-button-secondary-disabled-stroke: var(--c-stroke-button);
 
   //Tabs
   --c-tabs-background: #edeaff;
@@ -86,6 +90,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  padding-block: 3.2rem;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.6;
@@ -95,6 +100,13 @@ body {
 .wrapper {
   width: min(1312px, calc(100% - 64px));
   margin-inline: auto;
+}
+
+//Jedna połowa
+.wrapper-half {
+  width: min(656px, calc(100% - 32px));
+  margin-left: auto;
+  margin-right: 0;
 }
 
 img,
@@ -119,6 +131,11 @@ textarea,
 button,
 select {
   font: inherit;
+}
+
+button {
+  background-color: transparent;
+  border: none;
 }
 
 a {
