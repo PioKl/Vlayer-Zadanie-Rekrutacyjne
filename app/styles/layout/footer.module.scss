@@ -1,0 +1,94 @@
+@use "../base/resolutions.scss" as *;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  letter-spacing: 0;
+
+  @include desktopSmall {
+    gap: 4rem;
+  }
+}
+
+.logo-footer {
+  font-size: 2.4rem;
+  line-height: 1.1;
+}
+
+.support {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding-bottom: 2.4rem;
+  border-bottom: 0.1rem solid var(--c-stroke-footer);
+
+  @include desktopSmall {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+    padding-bottom: 4rem;
+  }
+
+  &__items-list {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: 1fr 1fr;
+    row-gap: 1.4rem;
+    grid-template-areas:
+      "a . b"
+      "c c c";
+
+    opacity: 0.5;
+
+    @media (min-width: 445px) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3.2rem;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    &:nth-child(1) {
+      grid-area: a;
+    }
+
+    &:nth-child(2) {
+      grid-area: b;
+    }
+
+    &:nth-child(3) {
+      grid-area: c;
+      text-align: center;
+    }
+    @include desktopSmall {
+      padding-inline: 1.2rem;
+    }
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  @include desktopSmall {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__company-name {
+    opacity: 0.5;
+  }
+
+  &__items-list {
+    display: flex;
+    gap: 4rem;
+    opacity: 0.3;
+  }
+}
