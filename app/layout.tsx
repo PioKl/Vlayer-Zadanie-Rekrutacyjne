@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./styles/base/globals.scss";
+import MainLayout from "@/components/layout/MainLayout";
 
 // Konfiguracja czcionki
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -26,7 +27,7 @@ export default function RootLayout({
         className={`${plusJakartaSans.className}`}
         suppressHydrationWarning={true}
       >
-        {children}
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
   );
