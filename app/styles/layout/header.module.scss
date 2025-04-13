@@ -1,0 +1,116 @@
+@use "../base/resolutions.scss" as *;
+@use "../base//mixins.scss" as *;
+
+.header {
+  padding-bottom: 2.4rem;
+  border-bottom: 0.15rem solid var(--c-stroke);
+  &.--transparent {
+    border-color: transparent;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  @include desktopSmall {
+    flex-direction: row;
+  }
+
+  &__burger-menu-button {
+    position: relative;
+    top: 0.3rem;
+    @include desktopSmall {
+      display: none;
+    }
+  }
+  &__burger-menu-open-button {
+    &[aria-expanded="true"] {
+      display: none;
+
+      ~ .nav-menu {
+        translate: 0;
+
+        @media (prefers-reduced-motion) {
+          opacity: 1;
+        }
+      }
+
+      ~ .logo-header {
+        display: none;
+      }
+    }
+
+    &[aria-expanded="false"] {
+      + .nav__burger-menu-close-button {
+        display: none;
+      }
+    }
+  }
+}
+
+.nav-menu {
+  position: fixed;
+  z-index: 4;
+  top: 9rem;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding-top: 3rem;
+  translate: 100vw 0;
+  transition: translate 0.5s ease-in-out;
+  background: var(--c-blur-background);
+  @include backdrop-blur(10px);
+
+  @include desktopSmall {
+    position: static;
+    display: flex;
+    flex: 1;
+    padding: 0;
+    translate: 0;
+    background-color: transparent;
+  }
+
+  &__links-container {
+    @include wrapper();
+
+    @include desktopSmall {
+      display: flex;
+      flex: inherit;
+      align-items: center;
+      width: auto;
+      margin-inline: initial;
+    }
+  }
+
+  &__links-item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3.4rem;
+    margin-bottom: 8.6rem;
+    font-size: 2.6rem;
+    font-weight: 500;
+    line-height: 1.5;
+
+    @include desktopSmall {
+      flex-direction: row;
+      margin-left: auto;
+      margin-bottom: 0;
+      font-size: 1.6rem;
+      gap: 5.8rem;
+    }
+  }
+
+  &__auth-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    @include desktopSmall {
+      flex-direction: row;
+      gap: 1.8rem;
+      margin-left: auto;
+    }
+  }
+}
