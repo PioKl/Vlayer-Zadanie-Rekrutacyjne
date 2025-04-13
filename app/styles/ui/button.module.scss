@@ -1,0 +1,74 @@
+@use "../base/resolutions.scss" as *;
+
+.button {
+  &.--primary,
+  &.--secondary {
+    padding: 1.2rem 2.4rem;
+    border: 0.2rem solid;
+    border-radius: 0.8rem;
+    text-align: center;
+    outline: none;
+
+    &:disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+  &.--primary {
+    color: var(--c-button-primary-text);
+    background-color: var(--c-button-primary-default-background);
+
+    &:hover {
+      background-color: var(--c-button-primary-hover-background);
+    }
+
+    &:focus-visible {
+      background-color: var(--c-button-primary-focus-background);
+      border-color: var(--c-button-primary-focus-stroke);
+    }
+
+    &:active {
+      background-color: var(--c-button-primary-pressed-background);
+    }
+
+    &:disabled {
+      background-color: var(--c-button-primary-disabled-backround);
+    }
+  }
+  &.--secondary {
+    border-color: var(--c-button-secondary-default-stroke);
+
+    &:hover {
+      border-color: var(--c-button-secondary-hover-stroke);
+    }
+
+    &:focus-visible {
+      color: var(--c-button-secondary-focus-text);
+      border-color: var(--c-button-secondary-focus-stroke);
+    }
+
+    &:active {
+      color: var(--c-button-secondary-pressed-text);
+      border-color: var(--c-button-secondary-pressed-stroke);
+    }
+
+    &:disabled {
+      color: var(--c-button-secondary-disabled-text);
+      border-color: var(--c-button-secondary-disabled-stroke);
+    }
+  }
+  &.--auth {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    @include desktopSmall {
+      padding-inline: 3.7rem;
+    }
+  }
+
+  &.--standard-link {
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+}
