@@ -1,0 +1,15 @@
+@mixin wrapper {
+  width: min(1312px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+@mixin wrapper-half {
+  width: min(656px, calc(100% - 32px));
+  margin-left: auto;
+  margin-right: 0;
+}
+
+@mixin backdrop-blur($value: 50px) {
+  //domyślnie 50px
+  backdrop-filter: blur($value);
+}
