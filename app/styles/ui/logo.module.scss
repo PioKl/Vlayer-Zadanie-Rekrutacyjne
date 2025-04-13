@@ -1,0 +1,9 @@
+@use "../base/resolutions.scss" as *;
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  line-height: 1.4;
+  color: var(--c-logo-text);
+}
