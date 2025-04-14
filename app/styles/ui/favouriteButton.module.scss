@@ -5,6 +5,11 @@
   border: 0.15rem solid var(--c-favourite-default-border);
   border-radius: 100%;
   stroke: var(--c-favourite-default-icon-stroke);
+  transition: 0.2s ease-in-out;
+
+  &:active {
+    transition: none;
+  }
 
   &:hover {
     background-color: var(--c-button-primary-hover-background);
