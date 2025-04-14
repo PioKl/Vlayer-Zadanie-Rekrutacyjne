@@ -7,4 +7,9 @@
   gap: 0.4rem;
   line-height: 1.4;
   color: var(--c-logo-text);
+
+  &.--header {
+    position: relative;
+    z-index: 5;
+  }
 }
