@@ -1,11 +1,11 @@
 import { StaticImageData } from "next/image";
 
-export interface HeaderProps {
+export interface HeaderInterface {
   mainRef: React.RefObject<HTMLDivElement | null>;
   footerRef: React.RefObject<HTMLDivElement | null>;
 }
 
-export interface FooterProps {
+export interface FooterInterface {
   footerRef: React.RefObject<HTMLDivElement | null>;
 }
 
@@ -56,4 +56,12 @@ export interface PropertiesInterface {
 export interface PropertiesCardsInterface {
   activeTab: number;
   allProperties: PropertiesInterface[];
+}
+
+export interface CustomersInterface {
+  id: number;
+  name: string;
+  profession: string;
+  opinion: string;
+  avatarImage: string | StaticImageData;
 }
