@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
-import { HeaderProps } from "@/interfaces/interfaces";
+import { HeaderInterface } from "@/interfaces/interfaces";
 import styles from "@/styles/layout/header.module.scss";
+import stylesLogo from "@/styles/ui/logo.module.scss";
 import buttonStyles from "@/styles/ui/button.module.scss";
 import Logo from "@/components/ui/Logo";
 import MenuOpenIcon from "@/assets/icons/menu-open-icon.svg";
@@ -9,7 +10,7 @@ import MenuCloseIcon from "@/assets/icons/close-icon.svg";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 
-export default function Header({ mainRef, footerRef }: HeaderProps) {
+export default function Header({ mainRef, footerRef }: HeaderInterface) {
   const bodyRef = useRef<HTMLBodyElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const btnOpen = useRef<HTMLButtonElement>(null);
@@ -120,7 +121,9 @@ export default function Header({ mainRef, footerRef }: HeaderProps) {
         >
           <MenuCloseIcon />
         </button>
-        <Logo className={styles["logo-header"]} />
+        <Logo
+          className={`${styles["logo-header"]} ${stylesLogo["--header"]}`}
+        />
         <div
           className={`${styles["nav-menu"]}`}
           role="dialog"
