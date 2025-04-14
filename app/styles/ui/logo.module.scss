@@ -3,6 +3,7 @@
 .logo-container {
   display: flex;
   align-items: center;
+  max-width: fit-content;
   gap: 0.4rem;
   line-height: 1.4;
   color: var(--c-logo-text);
