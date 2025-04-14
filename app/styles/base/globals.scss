@@ -2,8 +2,12 @@
 @use "typography" as *;
 
 :root {
-  //Colors
-  --c-background-color: #ffffff;
+  /* 
+  =====================
+      Color Variables
+  =====================*/
+  --c-neutral: #ffffff;
+  --c-background-color: var(--c-neutral);
   --c-text-main: #000000;
   --c-text-main-transparent: rgba(0, 0, 0, 0.5);
   --c-text-main-transparent-alt: rgba(0, 0, 0, 0.7);
@@ -16,19 +20,39 @@
   --c-stroke-footer: #e8e6f9;
   --c-stroke-hero: #d6d8e5;
   --c-blur-background: rgba(255, 255, 255, 0.9);
+  --c-box-shadow: #e6e6ed;
+
+  //Card
+  --c-card-background: var(--c-neutral);
+  --c-card-stroke: #eaecf4;
+  --c-card-boxshadow: var(--c-box-shadow);
+  --c-card-property-name: var(--c-neutral);
+
+  //Favourite
+  --c-favourite-default-border: #eaecf4;
+  --c-favourite-default-icon-stroke: var(--c-accent);
+  --c-favourite-hover-border: var(--c-malibu);
+  --c-favourite-hover-icon-stroke: #3d1efe;
+  --c-favourite-hover-box-shadow: 0px 4px 40px var(--c-box-shadow);
+  --c-favourite-focus-border: var(--c-malibu);
+  --c-favourite-focus-icon-stroke: #3d1efe;
+  --c-favourite-focus-background: rgba(60, 30, 254, 0.2);
+  --c-favourite-pressed-border: var(--c-malibu);
+  --c-favourite-pressed-icon-stroke: var(--c-neutral);
+  --c-favourite-pressed-background: var(--c-accent);
 
   //Testimonials
   --c-testimonial-background: #d6d8e5;
   --c-testimonial-background-active: #ded1fa;
 
   //Gradient
-  --c-gradient-start: #ffffff;
+  --c-gradient-start: var(--c-neutral);
   --c-gradient-end: #f4effe;
   --gradient: linear-gradient(var(--c-gradient-start), var(--c-gradient-end));
 
   //Buttons
   --c-stroke-button: #d6d8e5;
-  --c-button-primary-text: #ffffff;
+  --c-button-primary-text: var(--c-neutral);
   --c-button-primary-default-background: var(--c-accent);
   --c-button-primary-hover-background: var(--c-malibu);
   --c-button-primary-focus-background: var(--c-accent);
@@ -46,15 +70,15 @@
   --c-button-secondary-disabled-stroke: var(--c-stroke-button);
 
   //Tabs
-  --c-tabs-background: #edeaff;
-  --c-tabs-stroke: var(--c-stroke);
+  --c-tabs-background: rgba(237, 234, 255, 0.3);
+  --c-tabs-stroke: #d6d8e5;
 
   --c-tab-default-active-background: var(--c-background-color);
   --c-tab-default-active-stroke: #eaecf4;
   --c-tab-default-active-text: var(--c-accent);
 
   --c-tab-hover-active-background: #edeaff;
-  --c-tab-hover-active-stroke: var(--c-stroke);
+  --c-tab-hover-active-stroke: var(--c-tabs-stroke);
   --c-tab-hover-active-text: var(--c-accent);
 
   --c-tab-pressed-active-background: #edeaff;
@@ -67,6 +91,14 @@
 
   --c-tab-default-inactive-text: var(--c-text-secondary);
   --c-tab-inactive-text: var(--c-accent);
+
+  /* 
+  ================
+      Variables 
+  ===============*/
+
+  //Card
+  --v-card-max-width: 35.2rem;
 }
 
 *,
@@ -134,6 +166,7 @@ select {
 }
 
 button {
+  cursor: pointer;
   background-color: transparent;
   border: none;
 }
@@ -141,4 +174,33 @@ button {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+//Globalne style dla swipera
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  max-width: 35.2rem;
+
+  text-align: center;
+  background-color: transparent;
+  border-radius: 0.8rem;
+
+  @include desktopSmall {
+    max-width: initial;
+  }
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
