@@ -1,0 +1,17 @@
+@use "../base/resolutions.scss" as *;
+
+.properties {
+  height: clamp(35rem, 33.776rem + 3.265vw, 37.4rem);
+
+  &__swiper-container {
+    position: absolute; //dla swipera
+
+    @include desktopSmall {
+      position: relative; //dla swipera
+    }
+  }
+
+  &__items-list {
+    display: grid;
+  }
+}
