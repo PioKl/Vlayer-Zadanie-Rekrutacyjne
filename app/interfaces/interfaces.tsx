@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export interface HeaderProps {
   mainRef: React.RefObject<HTMLDivElement | null>;
   footerRef: React.RefObject<HTMLDivElement | null>;
@@ -8,7 +10,7 @@ export interface FooterProps {
 }
 
 export interface StandardButton {
-  buttonType: "primary" | "secondary" | "standard-link";
+  buttonType: "primary" | "secondary" | "standard-link" | "tab";
   text: string;
   isALink: boolean; //np. gdyby login, sign up i inne przyciski prowadziły do jakiejś podstrony
   onClick?: () => void;
@@ -30,4 +32,28 @@ export interface WithoutLinkButton extends StandardButton {
 
 export interface LogoInterface {
   className?: string;
+}
+
+export interface Property {
+  propertyType: "House" | "Apartments";
+  image: string | StaticImageData; //string jakby ścieżka lokalna była, trzeba byłoby obslużyć url, static do statycznych importów
+  price: number;
+  billingPeriod: "month" | "day" | "week" | "year";
+  name: string;
+  address: string;
+}
+
+export interface PropertyCardInterface extends Property {
+  type: "showcase" | "favourite";
+}
+
+export interface PropertiesInterface {
+  id: number;
+  type: string;
+  properties: Property[];
+}
+
+export interface PropertiesCardsInterface {
+  activeTab: number;
+  allProperties: PropertiesInterface[];
 }
