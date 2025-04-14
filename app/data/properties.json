@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "type": "Houses",
+    "properties": [
+      {
+        "propertyType": "House",
+        "image": "/assets/images/houses/houseOne.png",
+        "price": 3440,
+        "billingPeriod": "month",
+        "name": "Palm Harbor",
+        "address": "2699 Green Valley, Highland Lake, FL"
+      },
+      {
+        "propertyType": "House",
+        "image": "/assets/images/houses/houseTwo.png",
+        "price": 6550,
+        "billingPeriod": "month",
+        "name": "St. Crystal",
+        "address": "210 US Highway, Highland Lake, FL"
+      },
+      {
+        "propertyType": "House",
+        "image": "/assets/images/houses/houseThree.png",
+        "price": 4950,
+        "billingPeriod": "month",
+        "name": "Faulkner Ave",
+        "address": "909 Woodland St, Michigan, IN"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "type": "Apartments",
+    "properties": [
+      {
+        "propertyType": "Apartments",
+        "image": "/assets/images/apartments/apartmentOne.png",
+        "price": 2140,
+        "billingPeriod": "month",
+        "name": "Tarpon Bay",
+        "address": "103 Lake Shores, Michigan, IN"
+      },
+      {
+        "propertyType": "Apartments",
+        "image": "/assets/images/apartments/apartmentTwo.png",
+        "price": 1450,
+        "billingPeriod": "month",
+        "name": "Cove Red",
+        "address": "243 Curlew Road, Palm Harbor, TX"
+      },
+      {
+        "propertyType": "Apartments",
+        "image": "/assets/images/apartments/apartmentThree.png",
+        "price": 3850,
+        "billingPeriod": "month",
+        "name": "Beverly Springfield",
+        "address": "2821 Lake Sevilla, Palm Harbor, TX"
+      }
+    ]
+  }
+]
