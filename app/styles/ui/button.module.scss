@@ -1,6 +1,12 @@
 @use "../base/resolutions.scss" as *;
 
 .button {
+  transition: 0.2s ease-in-out;
+
+  &:active {
+    transition: none;
+  }
+
   &.--primary,
   &.--secondary {
     padding: 1.2rem 2.4rem;
