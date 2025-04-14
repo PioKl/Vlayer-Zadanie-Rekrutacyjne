@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import styles from "@/styles/hero.module.scss";
-import mapImage from "@/assets/images/mapIllustration.png";
+import mapImage from "@/assets/images/mapIllustration.webp";
 import apartmentImage from "@/assets/images/apartments/apartmentThree.png";
 import PropertyCard from "./ui/PropertyCard";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -12,14 +14,42 @@ export default function Hero() {
         <div className={styles["welcome-background"]}></div>
         <div className={styles["welcome-container"]}>
           <div className={`${styles.welcome}`}>
-            <h1 className={styles["welcome__heading"]}>
+            <motion.h1
+              className={styles["welcome__heading"]}
+              viewport={{ once: true }}
+              initial={{ opacity: 0, x: "-5%", y: "25%" }}
+              whileInView={{
+                x: "0",
+                y: "0",
+                opacity: 1,
+                transition: { duration: 0.75, ease: "easeOut" },
+              }}
+            >
               Buy, rent, or sell your property easily
-            </h1>
-            <p className={styles["welcome__info"]}>
+            </motion.h1>
+            <motion.p
+              className={styles["welcome__info"]}
+              viewport={{ once: true }}
+              initial={{ opacity: 0, y: "30%" }}
+              whileInView={{
+                y: "0",
+                opacity: 1,
+                transition: { duration: 0.75, ease: "easeOut" },
+              }}
+            >
               A great platform to buy, sell, or even rent your properties
               without any commisions.
-            </p>
-            <div className={styles["stats-info"]}>
+            </motion.p>
+            <motion.div
+              className={styles["stats-info"]}
+              viewport={{ once: true }}
+              initial={{ opacity: 0, y: "10%" }}
+              whileInView={{
+                y: "0",
+                opacity: 1,
+                transition: { duration: 0.75, delay: 0.75, ease: "easeOut" },
+              }}
+            >
               <ul className={styles["stats-info__item-list"]}>
                 <li className={styles["stats-info__item"]}>
                   <span className={styles["stats-info__number"]}>50k+</span>
@@ -30,7 +60,7 @@ export default function Hero() {
                   <span className={styles["stats-info__name"]}>properties</span>
                 </li>
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -51,9 +81,10 @@ export default function Hero() {
               className={`${styles["show-case__image"]}`}
               width={0}
               height={0}
+              priority
               sizes="100vw"
               style={{ width: "100%", height: "auto" }}
-              alt="property-image"
+              alt="map-image"
             />
           </div>
         </div>
