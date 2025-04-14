@@ -1,0 +1,34 @@
+.favourite-button {
+  position: absolute;
+  right: 2.4rem;
+  padding: 1.2rem;
+  border: 0.15rem solid var(--c-favourite-default-border);
+  border-radius: 100%;
+  stroke: var(--c-favourite-default-icon-stroke);
+
+  &:hover {
+    background-color: var(--c-button-primary-hover-background);
+    border-color: var(--c-favourite-hover-border);
+    stroke: var(--c-favourite-hover-icon-stroke);
+    box-shadow: var(--c-favourite-hover-box-shadow);
+  }
+
+  &:focus-visible {
+    outline: 0;
+    background-color: var(--c-favourite-focus-background);
+    border-color: var(--c-favourite-focus-border);
+    stroke: var(--c-favourite-focus-icon-stroke);
+  }
+
+  &:active {
+    background-color: var(--c-favourite-pressed-background);
+    border-color: var(--c-favourite-pressed-border);
+    stroke: var(--c-favourite-pressed-icon-stroke);
+  }
+
+  &__icon {
+    path {
+      stroke: inherit;
+    }
+  }
+}
