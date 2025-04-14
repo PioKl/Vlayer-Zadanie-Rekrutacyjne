@@ -1,0 +1,23 @@
+[
+  {
+    "id": 0,
+    "name": "Mira Culos",
+    "profession": "Renter",
+    "opinion": "“Estatery is the platform I go to on almost a daily basis for 2nd home and vacation condo shopping, or to just look at dream homes in new areas. Thanks for fun home shopping and comparative analyzing, Estatery!”",
+    "avatarImage": "/assets/images/customers/avatarOne.webp"
+  },
+  {
+    "id": 1,
+    "name": "Mark Brown",
+    "profession": "Renter",
+    "opinion": "“I check Estatery almost every day — whether I'm seriously house hunting or just daydreaming about future getaways. It makes exploring new locations and comparing properties incredibly easy and enjoyable.”",
+    "avatarImage": "/assets/images/customers/avatarTwo.webp"
+  },
+  {
+    "id": 2,
+    "name": "Jake White",
+    "profession": "Renter",
+    "opinion": "“Estatery turns home shopping into a daily delight. Whether I'm planning for the future or just exploring what's out there, I always find something exciting and new.”",
+    "avatarImage": "/assets/images/customers/avatarThree.webp"
+  }
+]
