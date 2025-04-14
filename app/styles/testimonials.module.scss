@@ -1,0 +1,95 @@
+@use "./base/resolutions.scss" as *;
+
+.testimonials {
+  background-image: var(--gradient);
+}
+
+.testimonials-wrapper {
+  display: grid;
+  gap: 2.8rem;
+  padding-block: 1.6rem;
+  text-align: center;
+
+  @include desktopSmall {
+    gap: 4.8rem;
+    margin-bottom: 6.4rem;
+    padding-block: 3.2rem;
+  }
+}
+
+.testimonials-intro {
+  display: inherit;
+  justify-items: center;
+  gap: 1.6rem;
+
+  &__info {
+    max-width: 35.2rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--c-text-main-transparent-alt);
+  }
+}
+
+.testimonials-details {
+  display: inherit;
+  gap: 1.6rem;
+  max-width: 73.6rem;
+  margin-inline: auto;
+
+  @include desktopSmall {
+    gap: 3.2rem;
+  }
+
+  &__opinion {
+    min-height: 9.6rem;
+    font-weight: 500;
+  }
+
+  &__name-container {
+    font-size: 1.6rem;
+  }
+
+  &__profession {
+    font-weight: 400;
+    color: var(--c-text-secondary);
+  }
+}
+
+.testimonials-customers {
+  margin-inline: auto;
+  &__items-list {
+    display: flex;
+    gap: 3.2rem;
+  }
+  &__item {
+    position: relative;
+    width: 6rem;
+    height: 6rem;
+    &.--active {
+      outline: 0.3rem solid var(--c-outline-default);
+      outline-offset: 0.3rem;
+      border-radius: 50%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        box-sizing: border-box;
+        inset: -0.6rem;
+        border-radius: 50%;
+        border: 0.3rem solid var(--c-accent);
+        transform: rotate(94deg);
+        animation: testimonialBorderAnimation 1s ease-in-out forwards;
+      }
+    }
+  }
+}
+
+@keyframes testimonialBorderAnimation {
+  0% {
+    clip-path: polygon(100% 0%, 100% 0, 100% 100%);
+  }
+
+  100% {
+    clip-path: polygon(-101% 0%, 100% 0, 100% 100%);
+  }
+}
