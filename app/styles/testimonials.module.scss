@@ -57,39 +57,61 @@
 
 .testimonials-customers {
   margin-inline: auto;
+
   &__items-list {
     display: flex;
     gap: 3.2rem;
   }
-  &__item {
-    position: relative;
-    width: 6rem;
-    height: 6rem;
-    &.--active {
-      outline: 0.3rem solid var(--c-outline-default);
-      outline-offset: 0.3rem;
-      border-radius: 50%;
 
-      &::before {
-        content: "";
-        position: absolute;
-        box-sizing: border-box;
-        inset: -0.6rem;
-        border-radius: 50%;
-        border: 0.3rem solid var(--c-accent);
-        transform: rotate(94deg);
+  &__item {
+    &.--active {
+      .testimonials-customers__circle {
         animation: testimonialBorderAnimation 1s ease-in-out forwards;
       }
     }
+  }
+
+  &__circle-container {
+    display: flex;
+    width: 8rem;
+    margin-right: 1rem;
+    position: relative;
+  }
+
+  &__circular-chart {
+    display: block;
+    visibility: hidden;
+
+    &.--active {
+      stroke: var(--c-accent);
+      visibility: visible;
+    }
+  }
+
+  &__circle-outline {
+    fill: none;
+    stroke: var(--c-outline-default);
+    stroke-width: 1.7;
+  }
+
+  &__circle {
+    fill: none;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+  }
+
+  &__image-container {
+    position: absolute;
+    width: 6rem;
+    height: 6rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
 @keyframes testimonialBorderAnimation {
   0% {
-    clip-path: polygon(100% 0%, 100% 0, 100% 100%);
-  }
-
-  100% {
-    clip-path: polygon(-101% 0%, 100% 0, 100% 100%);
+    stroke-dasharray: 0 100;
   }
 }
