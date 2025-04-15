@@ -15,13 +15,15 @@ export default function Button({
   className,
 }: ButtonProps) {
   const buttonClass = `${styles["button"]} ${styles[`--${buttonType}`]}
-  } ${disabled && styles["--disabled"]} ${className}`;
+   ${disabled && styles["--disabled"]} ${className}`;
+
   return isALink ? (
     <Link
-      href={link as string}
+      href={link as string} //jak disabled niech nigdzie nie przenosi
       className={buttonClass}
       aria-disabled={disabled ? true : false} //dodanie aria-disabled jak disabled
       tabIndex={disabled ? -1 : 0} //wyłącznie z tabIndexu jak disabled
+      onClick={onClick}
     >
       {text}
     </Link>
