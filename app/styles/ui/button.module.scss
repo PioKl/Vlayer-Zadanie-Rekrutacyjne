@@ -41,6 +41,10 @@
     &:disabled {
       background-color: var(--c-button-primary-disabled-backround);
     }
+
+    &.--disabled {
+      background-color: var(--c-button-primary-disabled-backround);
+    }
   }
   &.--secondary {
     border-color: var(--c-button-secondary-default-stroke);
@@ -63,6 +67,11 @@
       color: var(--c-button-secondary-disabled-text);
       border-color: var(--c-button-secondary-disabled-stroke);
     }
+
+    &.--disabled {
+      color: var(--c-button-secondary-disabled-text);
+      border-color: var(--c-button-secondary-disabled-stroke);
+    }
   }
   &.--auth {
     font-size: 1.6rem;
@@ -70,6 +79,11 @@
     @include desktopSmall {
       padding-inline: 3.7rem;
     }
+  }
+
+  &.--disabled {
+    cursor: not-allowed;
+    pointer-events: none;
   }
 
   &.--standard-link {
