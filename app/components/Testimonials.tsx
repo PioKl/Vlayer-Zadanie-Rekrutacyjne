@@ -79,6 +79,7 @@ export default function Testimonials() {
                 </div>
               </motion.div>
             </AnimatePresence>
+
             <div className={styles["testimonials-customers"]}>
               <ul className={styles["testimonials-customers__items-list"]}>
                 {numberOfCustomersToShow.map((item, index) => (
@@ -88,15 +89,43 @@ export default function Testimonials() {
                       item.id === currentCustomer && styles["--active"]
                     }`}
                   >
-                    <Image
-                      src={item.avatarImage}
-                      alt="Avatar"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      style={{ objectFit: "cover" }}
-                      priority={true}
-                      className={styles["testimonials-customers__image"]}
-                    />
+                    <div
+                      className={`${styles["testimonials-customers__circle-container"]} `}
+                    >
+                      <svg
+                        viewBox="0 0 36 36"
+                        className={`${
+                          styles["testimonials-customers__circular-chart"]
+                        } ${item.id === currentCustomer && styles["--active"]}`}
+                      >
+                        <path
+                          className={
+                            styles["testimonials-customers__circle-outline"]
+                          }
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <path
+                          className={styles["testimonials-customers__circle"]}
+                          strokeDasharray={`${`${65}, 100`}`}
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                      </svg>
+                      <div
+                        className={
+                          styles["testimonials-customers__image-container"]
+                        }
+                      >
+                        <Image
+                          src={item.avatarImage}
+                          alt="Avatar"
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          style={{ objectFit: "cover" }}
+                          priority={true}
+                          className={styles["testimonials-customers__image"]}
+                        />
+                      </div>
+                    </div>
                   </li>
                 ))}
               </ul>
