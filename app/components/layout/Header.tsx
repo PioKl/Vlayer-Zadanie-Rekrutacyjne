@@ -46,7 +46,7 @@ export default function Header({ mainRef, footerRef }: HeaderInterface) {
     }
   };
 
-  const handleBtnClose = () => {
+  const closeMobileMenu = () => {
     btnOpen.current?.setAttribute("aria-expanded", "false");
 
     //Zablokowanie możliwości interakcji (klawiatura i myszka) i widoczności dla accessibility
@@ -75,6 +75,16 @@ export default function Header({ mainRef, footerRef }: HeaderInterface) {
     if (headerRef.current) {
       headerRef.current.classList.remove(styles["--transparent"]);
     }
+  };
+
+  const handleBtnClose = () => {
+    closeMobileMenu();
+  };
+
+  const handleBtnLink = () => {
+    handleBtnClose();
+    navMenu.current?.removeAttribute("inert");
+    navMenu.current?.removeAttribute("style");
   };
 
   useEffect(() => {
@@ -131,7 +141,16 @@ export default function Header({ mainRef, footerRef }: HeaderInterface) {
           ref={navMenu}
         >
           <div className={`${styles["nav-menu__links-container"]}`}>
-            <ul className={styles["nav-menu__links-item-list"]}>
+            <ul
+              className={styles["nav-menu__links-item-list"]}
+              //Najbliższy kliknięty li w menu wywołuje handleBtnLink, czyli zamknie menu
+              onClick={(e) => {
+                const target = e.target as HTMLElement;
+                if (target.closest("li")) {
+                  handleBtnLink();
+                }
+              }}
+            >
               {/* W przypadku rozbudowy linki do poszczególnych stron */}
               <li className={styles["nav-menu__links-item"]}>
                 <Link href="/">Rent</Link>
@@ -157,6 +176,7 @@ export default function Header({ mainRef, footerRef }: HeaderInterface) {
                 isALink={true}
                 link={"/"}
                 className={buttonStyles["--auth"]}
+                onClick={handleBtnLink}
               />
               <Button
                 buttonType="primary"
@@ -164,6 +184,7 @@ export default function Header({ mainRef, footerRef }: HeaderInterface) {
                 isALink={true}
                 link={"/"}
                 className={buttonStyles["--auth"]}
+                onClick={handleBtnLink}
               />
             </div>
           </div>
