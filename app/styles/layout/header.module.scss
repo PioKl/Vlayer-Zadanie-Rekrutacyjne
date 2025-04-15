@@ -102,6 +102,10 @@
     }
   }
 
+  &__links-item {
+    max-width: fit-content;
+  }
+
   &__auth-links {
     display: flex;
     flex-direction: column;
